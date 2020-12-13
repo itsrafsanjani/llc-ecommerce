@@ -19,7 +19,22 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone_number',
         'password',
+        'reward_points',
+        'email_verified_at',
+        'email_verification_token',
+        'facebook_id',
+        'google_id',
+    ];
+
+    /**
+     * The attribute that should be guarded
+     *
+     * @var array
+     */
+    protected $guarded = [
+        'remember_token'
     ];
 
     /**
