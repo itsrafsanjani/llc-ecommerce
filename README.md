@@ -7,12 +7,13 @@ LLC Ecommerce is an open source ecommerce platform management system using Larav
 ## Installation Instructions
 
 - Clone the repo.
-- Run `composer install`
 - Run `cd llc-ecommerce`
-- Run `@php -r "file_exists('.env') || copy('.env.example', '.env');"`
-- Run `@php artisan key:generate --ansi`
+- Run `composer install`
+- Run `php -r "file_exists('.env') || copy('.env.example', '.env');"`
+- Run `php artisan key:generate --ansi`
 - Run `mysql -uroot`
 - Run `create database llc_ecommerce;`
+- Edit `.env` file
 - Run `php artisan migrate --seed`
 
 ## Contributing
