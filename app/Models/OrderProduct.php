@@ -22,6 +22,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|OrderProduct whereProductId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|OrderProduct whereQuantity($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Order $order
+ * @property-read \App\Models\Product $product
  */
 class OrderProduct extends Model
 {
