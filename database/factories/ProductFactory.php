@@ -24,7 +24,7 @@ class ProductFactory extends Factory
     {
         return [
             'category_id' => Category::all()->random()->id,
-            'title' => $this->faker->text(100),
+            'title' => $this->faker->unique()->text(100),
             'description' => $this->faker->text,
             'price' => random_int(500, 5000),
         ];

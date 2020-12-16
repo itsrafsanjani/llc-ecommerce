@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'Frontend'], function (){
     Route::get('/', [HomeController::class, 'showHomePage'])->name('frontend.home');
     Route::get('/products/{slug}', [ProductController::class, 'showDetails'])->name('frontend.product.details');
+    Route::get('/carts', [CartController::class, 'showCart'])->name('frontend.cart.show');
+    Route::post('/carts', [CartController::class, 'addToCart'])->name('frontend.cart.add');
+    Route::post('/carts/{id}', [CartController::class, 'updateCart'])->name('frontend.cart.update');
+    Route::delete('/carts', [CartController::class, 'destroyCart'])->name('frontend.cart.destroy');
 });
-
-
