@@ -20,9 +20,16 @@
                         <p class="price-detail-wrap">
                             <span class="price h3 text-warning">
                                 <span class="currency">BDT </span>
-                                <span class="num">
-                                    {{ $product->price }}
+                                @if($product->sale_price)
+                                    <span class="num">
+                                    BDT. {{ $product->sale_price }}
+                                    <strike>BDT. {{ $product->price }}</strike>
                                 </span>
+                                @else
+                                    <span class="num">
+                                    BDT. {{ $product->price }}
+                                </span>
+                                @endif
                             </span>
                         </p>
                         <dl class="item-property">
