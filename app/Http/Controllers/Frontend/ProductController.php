@@ -16,6 +16,8 @@ class ProductController extends Controller
             return redirect()->route('frontend.home');
         }
 
+        $data['images'] =  $data['product']->getMedia('products');
+
         return view('frontend.product.details', $data);
     }
 }
