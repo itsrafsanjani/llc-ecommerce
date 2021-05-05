@@ -11,6 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.styles(['resources/css/bootstrap.min.css', 'resources/css/app.css',], 'public/css/app.css')
-    .js('resources/js/app.js', 'public/js/app.js')
+mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]).styles(['resources/css/bootstrap.min.css'], 'public/css/all.css')
     .version();

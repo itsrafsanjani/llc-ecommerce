@@ -17,14 +17,19 @@
                     <h4 class="text-white">Menu</h4>
                     <ul class="list-unstyled">
                         @guest
-                        <li><a href="#" class="text-white">Create an account</a></li>
-                        <li><a href="#" class="text-white">Login</a></li>
+                        <li><a href="{{ route('register') }}" class="text-white">Register</a></li>
+                        <li><a href="{{ route('login') }}" class="text-white">Login</a></li>
                         @endguest
+                        <li><a href="{{ route('frontend.cart.show') }}" class="text-white">Cart</a></li>
                         @auth
                             <li><a href="#" class="text-white">My Profile</a></li>
-                            <li><a href="#" class="text-white">Logout</a></li>
+                            <form action="{{route('logout')}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    Logout
+                                </button>
+                            </form>
                         @endauth
-                        <li><a href="#" class="text-white">Cart</a></li>
                     </ul>
                 </div>
             </div>

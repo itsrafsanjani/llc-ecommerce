@@ -14,12 +14,13 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        Product::factory(20)->create();
+        Product::factory(10)->create();
 
         $products = Product::select('id')->get();
 
         foreach ($products as $product) {
-            $product->addMediaFromUrl('https://via.placeholder.com/640x480.png/00bbcc?text=similique')->toMediaCollection('products');
+            $product->addMediaFromUrl('https://via.placeholder.com/640x480')
+                ->toMediaCollection('products');
         }
     }
 }
