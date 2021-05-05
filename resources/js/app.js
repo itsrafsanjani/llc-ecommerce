@@ -1,6 +1,8 @@
 require('./bootstrap');
 
-require('./bootstrap-notify.min')
+require('alpinejs');
+
+require('./bootstrap-notify.min');
 
 // popper.js tooltip enabled
 $(function () {
