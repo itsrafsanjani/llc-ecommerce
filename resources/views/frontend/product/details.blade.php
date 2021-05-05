@@ -11,6 +11,15 @@
                                  class="card-img">
                         </div>
                     </div>
+                    <div class="row">
+                        @forelse($images as $image)
+                            <div  class="col-md-3 my-2">
+                                <img src="{{ $image->getUrl() }}" alt="{{ $product->title }}">
+                            </div>
+                        @empty
+                            No images!
+                        @endforelse
+                    </div>
                 </div>
                 <div class="col-sm-7">
                     <article class="card-body p-5">
